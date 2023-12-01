@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const data: string = fs.readFileSync(path.join(__dirname, './text.txt'), 'utf8');
+const data: string = fs.readFileSync(path.join(__dirname, './input.txt'), 'utf8');
 const lines: string[] = data.split('\n');
 let total: number = 0;
 
@@ -22,11 +22,11 @@ for (const line of lines) {
 
     let lastIdx: number = line.length + 10;
     let lastNumber: number = 0;
-    for (let z = line.length - 1; z >= 0; z--) {
-        const number: number = parseInt(line[z]);
+    for (let i = line.length - 1; i >= 0; i--) {
+        const number: number = parseInt(line[i]);
         if (!isNaN(number)) {
             lastNumber = number;
-            lastIdx = z;
+            lastIdx = i;
             break;
         }
     }
