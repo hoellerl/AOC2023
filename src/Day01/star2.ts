@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 const data: string = fs.readFileSync(path.join(__dirname, './input.txt'), 'utf8');
-const lines: string[] = data.split('\n');
+const lines: string[] = data.split(/\r?\n/);
 let total: number = 0;
 
 const nums: string[] = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
