@@ -60,4 +60,3 @@ for (let i = 0; i < cards.length; i++) {
 }
 
 console.log("Answer:   " + points);
-console.log("Expected: 30");
