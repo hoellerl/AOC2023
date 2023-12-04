@@ -3,7 +3,7 @@ import path from 'path';
 
 const data: string = fs.readFileSync(path.join(__dirname, './input.txt'), 'utf8');
 const lines: string[] = data.split(/\r?\n/);
-let points = 0;
+let copieCnt = 0;
 
 interface Card {
     winningNums: string[];
@@ -34,7 +34,7 @@ for (const line of lines) {
 }
 
 function addCard(idx:number):void{
-    points ++;
+    copieCnt ++;
     const card = cards[idx];
     for (let i = 0; i < card.copies.length; i++) {
         addCard(card.copies[i]);
@@ -45,4 +45,4 @@ for (let i = 0; i < cards.length; i++) {
     addCard(i);
 }
 
-console.log("Answer: " + points);
+console.log("Answer: " + copieCnt);

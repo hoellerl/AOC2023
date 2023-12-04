@@ -5,10 +5,10 @@ import * as fs from 'fs';
 const asyncExec = promisify(exec);
 
 const executeStar = async (day: number, star: number) => {
-  if (day < 1 || day > 24 || star < 1 || star > 2) {
+  if (day < 1 || day > 25 || star < 1 || star > 2) {
     console.log(`Usage: ts-node execute.ts [day] [star]`);
     console.log(`or:    npm start [day] [star]\n`);
-    console.log(`[day]  should be between 1 and 24`);
+    console.log(`[day]  should be between 1 and 25`);
     console.log(`[star] should be either 1 or 2`);
     return;
   }
