@@ -31,11 +31,9 @@ for (const line of lines) {
 
     let currentPoints = 0;
     for (const myNum of myNums) {
-        for (const winningNum of winningNums) {
-            if (myNum === winningNum) {
-                currentPoints++;
-            }
-        }
+       if (winningNums.includes(myNum)){
+           currentPoints ++;
+       }
     }
     const copies :number[]= [];
     for (let i = 1; i < currentPoints +1; i++){
