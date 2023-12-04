@@ -14,20 +14,11 @@ interface Card {
 const cards: Card[] = [];
 
 for (const line of lines) {
-    const nameAndInput = line.split(": ");
-    const input = nameAndInput[1].split(" | ");
-    const winningNums = input[0].split(" ");
-    const myNums = input[1].split(" ");
-    winningNums.forEach((num, index) => {
-        if (num === "") {
-            winningNums.splice(index, 1);
-        }
-    });
-    myNums.forEach((num, index) => {
-        if (num === "") {
-            myNums.splice(index, 1);
-        }
-    });
+    const input = line.split(": ")[1].split(" | ");
+    let winningNums = input[0].split(" ");
+    let myNums = input[1].split(" ");
+    winningNums = winningNums.filter(Boolean);
+    myNums = myNums.filter(Boolean);
 
     let currentPoints = 0;
     for (const myNum of myNums) {
@@ -54,4 +45,4 @@ for (let i = 0; i < cards.length; i++) {
     addCard(i);
 }
 
-console.log("Answer:   " + points);
+console.log("Answer: " + points);

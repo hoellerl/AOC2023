@@ -6,8 +6,7 @@ const lines: string[] = data.split(/\r?\n/);
 let points = 0;
 
 for (const line of lines) {
-    const nameAndInput = line.split(": ");
-    const input = nameAndInput[1].split(" | ");
+    const input = line.split(": ")[1].split(" | ");
     let winningNums = input[0].split(" ");
     let myNums = input[1].split(" ");
     winningNums = winningNums.filter(Boolean);
@@ -23,4 +22,4 @@ for (const line of lines) {
 }
 
 
-console.log("Answer:   " + points);
+console.log("Answer: " + points);
