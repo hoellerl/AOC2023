@@ -35,13 +35,6 @@ for (let i = 0; i < lines.length; i++) {
                     }
                 }
             }
-            /*if (i !== lines.length - 1 && j !== lines[i].length - 1){
-                for (let k = -1; k < 2; k++){
-                    if (lines[i+1][j+k].match(/\D/) && lines[i+1][j+k] !== "."){
-                        usableNum = true;
-                    }
-                }
-            }*/
         }
         if (lines[i][j].match(/\D/) || j === lines[i].length - 1){
             if (usableNum){
