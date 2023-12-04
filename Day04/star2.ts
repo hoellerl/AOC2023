@@ -30,9 +30,6 @@ for (const line of lines) {
     });
 
     let currentPoints = 0;
-    console.log("NEW CARD:");
-    console.log("Winning: " + winningNums);
-    console.log("Mine:    " + myNums);
     for (const myNum of myNums) {
         for (const winningNum of winningNums) {
             if (myNum === winningNum) {
