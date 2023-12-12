@@ -14,7 +14,7 @@ const executeStar = async (day: number, star: number) => {
   }
 
   const paddedDay = day.toString().padStart(2, '0');
-  const directory = `./src/Day${paddedDay}/`;
+  const directory = `./Day${paddedDay}/`;
 
   try {
     const files = await fs.promises.readdir(directory);
