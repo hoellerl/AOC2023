@@ -1,12 +1,12 @@
 import * as fs from 'fs';
 import path from 'path';
 
-const lines: string = fs.readFileSync(path.join(__dirname, './input.txt'), 'utf8');
+const data: string = fs.readFileSync(path.join(__dirname, './input.txt'), 'utf8');
 
-const [seeds, ...mapsAsStrings] = lines.trim().split(/\r?\n\r?\n/);
+const [seeds, ...lines] = data.trim().split(/\r?\n\r?\n/);
 let seedNums:number[] = seeds.trim().split("seeds:")[1].trim().split(" ").map(Number);
 
-const maps = mapsAsStrings.map((num) => num.trim().split("\n").map((line) => line.trim().split(" ").map(Number)) as [number, number, number][]);
+const maps = lines.map((num) => num.trim().split("\n").map((line) => line.trim().split(" ").map(Number)) as [number, number, number][]);
 
 for (const map of maps){
     seedNums = calcSeedValues(map, seedNums);
